@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flozen by MR.10 | Premium Online Shopping</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#050505',
+                            gray: '#1a1a1a',
+                            accent: '#FF3366',
+                            blue: '#00C2FF',
+                            purple: '#7000FF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF3366; }
+        .text-gradient { background: linear-gradient(to right, #00C2FF, #FF3366); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
+        .cursor-dot { width: 8px; height: 8px; background-color: #fff; }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(255, 255, 255, 0.5); transition: all 0.3s; }
+        .marquee-content { display: inline-block; animation: scroll 25s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .img-zoom { transition: transform 0.6s ease; }
+        .img-zoom:hover { transform: scale(1.08); }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white cursor-none">
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+    <!-- Loader -->
+    <div class="loader-overlay fixed inset-0 bg-black z-[9999] flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-7xl md:text-9xl font-bold font-serif italic opacity-0" id="loader-text-1">Flozen</h1>
+            <h2 class="text-6xl md:text-9xl font-black text-brand-accent opacity-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" id="loader-text-2">MR.10</h2>
+        </div>
+    </div>
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-5 flex justify-between items-center mix-blend-difference text-white">
+        <div class="text-3xl font-black tracking-tighter">FLOZEN</div>
+        <div class="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase">
+            <a href="#home" class="hover:text-brand-accent transition">Home</a>
+            <a href="#products" class="hover:text-brand-accent transition">Shop</a>
+            <a href="#trending" class="hover:text-brand-accent transition">Trending</a>
+        </div>
+        <a href="tel:+923000000000" class="border border-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-black transition">CALL NOW</a>
+    </nav>
+    <!-- Hero -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1620760460330-0164c4149021?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
+        <div class="relative z-10 text-center px-6">
+            <p class="text-brand-blue tracking-[0.6em] text-sm md:text-lg uppercase mb-4 hero-anim">The Ultimate Choice</p>
+            <h1 class="text-8xl md:text-[14rem] font-black tracking-tighter hero-anim">FLOZEN</h1>
+            <h2 class="text-5xl md:text-8xl font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-accent hero-anim -mt-8">by MR.10</h2>
+            <p class="max-w-2xl mx-auto text-gray-300 text-lg mt-10 hero-anim">Premium gadgets, streetwear & lifestyle products delivered worldwide with trust & speed.</p>
+        </div>
+    </section>
+    <!-- Marquee -->
+    <div class="bg-brand-accent py-5 -rotate-1 z-20 border-y border-black">
+        <div class="marquee-container overflow-hidden whitespace-nowrap">
+            <div class="marquee-content text-black font-black text-3xl md:text-5xl uppercase">
+                ★ FLOZEN MR.10 • LIMITED DROPS • FAST SHIPPING • 100% AUTHENTIC • SECURE PAYMENT ★ FLOZEN MR.10 • LIMITED DROPS • FAST SHIPPING • 100% AUTHENTIC • SECURE PAYMENT ★
+            </div>
+        </div>
+    </div>
+    <!-- Products Section -->
+    <section id="products" class="py-32 px-6 md:px-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-6xl md:text-8xl font-black text-gradient mb-4">Featured Drops</h2>
+            <p class="text-xl text-gray-400">Handpicked. Limited. Legendary.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            <!-- Product 1 -->
+            <article class="group glass rounded-3xl overflow-hidden cursor-pointer product-card" data-product="AirPods Max (Space Gray)" data-price="PKR 149,999" data-image="https://images.unsplash.com/photo-1613040809024-b4ef374e2f52?q=80&w=2070&auto=format&fit=crop">
+                <div class="h-96 overflow-hidden img-zoom">
+                    <img src="https://images.unsplash.com/photo-1613040809024-b4ef374e2f52?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-2">AirPods Max</h3>
+                    <p class="text-brand-accent text-2xl font-bold mb-4">PKR 149,999</p>
+                    <button class="w-full bg-white text-black font-bold py-4 rounded-xl hover:bg-brand-accent hover:text-white transition transform hover:scale-105 buy-btn">BUY NOW</button>
+                </div>
+            </article>
+            <!-- Product 2 -->
+            <article class="group glass rounded-3xl overflow-hidden cursor-pointer product-card md:mt-16" data-product="iPhone 16 Pro Max (Desert Titanium)" data-price="PKR 499,999" data-image="https://images.unsplash.com/photo-1728910910634-063b004d3e66?q=80&w=2070&auto=format&fit=crop">
+                <div class="h-96 overflow-hidden img-zoom">
+                    <img src="https://images.unsplash.com/photo-1728910910634-063b004d3e66?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-2">iPhone 16 Pro Max</h3>
+                    <p class="text-brand-accent text-2xl font-bold mb-4">PKR 499,999</p>
+                    <button class="w-full bg-white text-black font-bold py-4 rounded-xl hover:bg-brand-accent hover:text-white transition transform hover:scale-105 buy-btn">BUY NOW</button>
+                </div>
+            </article>
+            <!-- Product 3 -->
+            <article class="group glass rounded-3xl overflow-hidden cursor-pointer product-card" data-product="PlayStation 5 Pro" data-price="PKR 229,999" data-image="https://images.unsplash.com/photo-1606149072169-945f8c9e0f9e?q=80&w=2070&auto=format&fit=crop">
+                <div class="h-96 overflow-hidden img-zoom">
+                    <img src="https://images.unsplash.com/photo-1606149072169-945f8c9e0f9e?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-2">PlayStation 5 Pro</h3>
+                    <p class="text-brand-accent text-2xl font-bold mb-4">PKR 229,999</p>
+                    <button class="w-full bg-white text-black font-bold py-4 rounded-xl hover:bg-brand-accent hover:text-white transition transform hover:scale-105 buy-btn">BUY NOW</button>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section class="py-32 relative overflow-hidden text-center">
+        <div class="glass max-w-4xl mx-auto p-16 rounded-3xl border border-white/10">
+            <h2 class="text-5xl md:text-7xl font-black mb-6">Ready to Own the Best?</h2>
+            <p class="text-xl text-gray-300 mb-10">Limited stock • Fastest delivery • 100% authentic</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="https://wa.me/+9654373763" target="_blank" class="bg-green-500 text-white font-bold px-12 py-6 rounded-full text-xl hover:bg-green-600 transition flex items-center justify-center gap-3">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.1.032-.297-.17-.569-.395-.769-.224-.2-.479-.284-.636-.284-.151 0-.297.049-.447.149-.149.1-.447.349-.495.549-.049.2-.099.449-.099.649 0 .2.099.449.297.649.198.2.546.399.894.448.349.049.795-.1.993-.348.198-.247.297-.546.297-.795 0-.149-.05-.298-.149-.447zm-5.647 2.368c-.298-.149-1.758-.867-2.03-1.1.032-.297-.17-.569-.395-.769-.224-.2-.479-.284-.636-.284-.151 0-.297.049-.447.149-.149.1-.447.349-.495.549-.049.2-.099.449-.099.649 0 .2.099.449.297.649.198.2.546.399.894.448.349.049.795-.1.993-.348.198-.247.297-.546.297-.795 0-.149-.05-.298-.149-.447zm-5.647 2.368c-.298-.149-1.758-.867-2.03-1.1.032-.297-.17-.569-.395-.769-.224-.2-.479-.284-.636-.284-.151 0-.297.049-.447.149-.149.1-.447.349-.495.549-.049.2-.099.449-.099.649 0 .2.099.449.297.649.198.2.546.399.894.448.349.049.795-.1.993-.348.198-.247.297-.546.297-.795 0-.149-.05-.298-.149-.447z"/></svg>
+                    Chat on WhatsApp
+                </a>
+                <a href="tel:+9654373763" class="bg-white text-black font-bold px-12 py-6 rounded-full text-xl hover:bg-brand-accent hover:text-white transition">Call Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black/95 z-[9999] items-center justify-center hidden" style="display:none">
+        <div class="glass max-w-6xl w-full mx-6 p-8 md:p-12 rounded-3xl max-h-[95vh] overflow-y-auto relative">
+            <button class="absolute top-6 right-6 text-5xl text-white/70 hover:text-white transition close-modal">&times;</button>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <img id="modal-img" src="" class="w-full rounded-2xl shadow-2xl">
+                    <p class="text-center mt-4 text-sm text-gray-400">Click image to view full size</p>
+                </div>
+                <div>
+                    <h2 id="modal-title" class="text-4xl md:text-5xl font-black mb-4"></h2>
+                    <p id="modal-price" class="text-brand-accent text-4xl font-bold mb-8"></p>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="text-gray-400">Size</label>
+                            <select class="w-full bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-white mt-2">
+                                <option>One Size</option>
+                                <option>256GB</option>
+                                <option>512GB</option>
+                                <option>1TB</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="qty-btn border border-white/30 px-6 py-3 rounded-lg hover:bg-white/10">-</button>
+                            <span id="qty" class="text-2xl font-bold w-16 text-center">1</span>
+                            <button class="qty-btn border border-white/30 px-6 py-3 rounded-lg hover:bg-white/10">+</button>
+                        </div>
+                        <div class="flex flex-col gap-4 mt-10">
+                            <button id="whatsapp-btn" class="bg-green-500 text-white font-bold py-5 rounded-xl text-xl hover:bg-green-600 transition flex items-center justify-center gap-4">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-1.1.032-.297-.17-.569-.395-.769-.224-.2-.479-.284-.636-.284-.151 0-.297.049-.447.149-.149.1-.447.349-.495.549-.049.2-.099.449-.099.649 0 .2.099.449.297.649.198.2.546.399.894.448.349.049.795-.1.993-.348.198-.247.297-.546.297-.795 0-.149-.05-.298-.149-.447zm-5.647 2.368c-.298-.149-1.758-.867-2.03-1.1.032-.297-.17-.569-.395-.769-.224-.2-.479-.284-.636-.284-.151 0-.297.049-.447.149-.149.1-.447.349-.495.549-.049.2-.099.449-.099.649 0 .2.099.449.297.649.198.2.546.399.894.448.349.049.795-.1.993-.348.198-.247.297-.546.297-.795 0-.149-.05-.298-.149-.447zm-5.647 2.368c-.298-.149-1.758-.867-2.03-1.1.032-.297-.17-.569-.395-.769-.224-.2-.479-.284-.636-.284-.151 0-.297.049-.447.149-.149.1-.447.349-.495.549-.049.2-.099.449-.099.649 0 .2.099.449.297.649.198.2.546.399.894.448.349.049.795-.1.993-.348.198-.247.297-.546.297-.795 0-.149-.05-.298-.149-.447z"/></svg>
+                                Order via WhatsApp
+                            </button>
+                            <a id="call-btn" href="" class="bg-white text-black font-bold py-5 rounded-xl text-xl hover:bg-brand-accent hover:text-white transition text-center">Call to Order</a>
+                            <button id="gmail-btn" class="bg-brand-blue text-white font-bold py-5 rounded-xl text-xl hover:bg-blue-600 transition">Send via Gmail</button>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold mb-4">Customer Reviews</h3>
+                        <div class="space-y-4 text-gray-400">
+                            <p>★★★★★ "Insane quality, fastest delivery ever!" – Ahmed K.</p>
+                            <p>★★★★★ "100% original, worth every penny." – Fatima S.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        // === EDIT THESE TWO LINES ONLY ===
+        const WHATSAPP_NUMBER = "+9654373763";  // ← Your WhatsApp number
+        const OWNER_EMAIL = "gc7860010@gmail.com"; // ← Your email
+        // =====================================
+        // Cursor
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', e => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+            cursorOutline.animate({left: e.clientX + 'px', top: e.clientY + 'px'}, {duration: 500, fill: "forwards"});
+        });
+        // Loader
+        const tl = gsap.timeline();
+        tl.to("#loader-text-1", {opacity:1, y:-20, duration:1})
+          .to("#loader-text-1", {opacity:0, duration:0.6, delay:0.4})
+          .to("#loader-text-2", {opacity:1, scale:1.3, duration:0.8, ease:"back.out(1.7)"})
+          .to(".loader-overlay", {y:"-100%", duration:1.2, ease:"power4.inOut", delay:0.4})
+          .from(".hero-anim", {y:100, opacity:0, stagger:0.2, duration:1.2}, "-=1");
+        // Product Modal Logic
+        const modal = document.getElementById('product-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalPrice = document.getElementById('modal-price');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const callBtn = document.getElementById('call-btn');
+        const gmailBtn = document.getElementById('gmail-btn');
+        const qtyDisplay = document.getElementById('qty');
+        let qty = 1;
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const product = card.dataset.product;
+                const price = card.dataset.price;
+                const img = card.dataset.image;
+                modalTitle.textContent = product;
+                modalPrice.textContent = price;
+                modalImg.src = img;
+                modalImg.onclick = () => window.open(img, '_blank');
+                qty = 1;
+                qtyDisplay.textContent = qty;
+                // WhatsApp
+                const waText = encodeURIComponent(`Hello MR. Flozen,\n\nIt would be a pleasure if I could place an order for:\n\n${product}\nQuantity: ${qty}\nPrice: ${price}\n\nImage: ${img}\n\nLooking forward to your quick response!\nThank you ❤️`);
+                whatsappBtn.onclick = () => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`, '_blank');
+                // Call
+                callBtn.href = `tel:${WHATSAPP_NUMBER}`;
+                // Gmail
+                gmailBtn.onclick = () => {
+                    const subject = `Order - ${product}`;
+                    const body = `Hello MR. Flozen,\n\nIt would be a pleasure if I could place an order for the ${product} (Quantity: ${qty}) right now.\n\nProduct Link/Image: ${img}\n\nThank you!`;
+                    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${OWNER_EMAIL}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+                };
+                modal.style.display = 'flex';
+                gsap.from('.glass', {scale:0.8, opacity:0, duration:0.6, ease:"back.out(1.7)"});
+            });
+        });
+        // Quantity
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.textContent === '+' ) qty++;
+                else if (qty > 1) qty--;
+                qtyDisplay.textContent = qty;
+            });
+        });
+        // Close modal
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            gsap.to('.glass', {scale:0.9, opacity:0, duration:0.3, onComplete: () => modal.style.display = 'none'});
+        });
+        modal.addEventListener('click', e => { if (e.target === modal) document.querySelector('.close-modal').click(); });
+        // Scroll animations
+        gsap.utils.toArray('.product-card').forEach((card, i) => {
+            gsap.from(card, {y: 150, opacity: 0, duration: 1, delay: i*0.2, scrollTrigger: {trigger: "#products", start: "top 70%"}});
+        });
+    </script>
+</body>
+</html>
