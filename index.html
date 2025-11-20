@@ -264,10 +264,29 @@
             gsap.to('.glass', {scale:0.9, opacity:0, duration:0.3, onComplete: () => modal.style.display = 'none'});
         });
         modal.addEventListener('click', e => { if (e.target === modal) document.querySelector('.close-modal').click(); });
-        // Scroll animations
-        gsap.utils.toArray('.product-card').forEach((card, i) => {
-            gsap.from(card, {y: 150, opacity: 0, duration: 1, delay: i*0.2, scrollTrigger: {trigger: "#products", start: "top 70%"}});
-        });
+        // --- ENHANCED SCROLL ANIMATIONS for Product Cards ---
+gsap.utils.toArray('.product-card').forEach((card, i) => {
+    // Determine a random, subtle starting rotation for the 3D effect
+    const initialRotation = (i % 2 === 0) ? 5 : -5;
+    
+    gsap.from(card, {
+        y: 100,
+        opacity: 0,
+        rotationX: 30, // Tilt effect
+        skewY: initialRotation, // Subtle skew
+        transformOrigin: "center top",
+        duration: 1.2,
+        delay: i * 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: card,
+            start: "top 85%", // Start the animation when the card is 85% into the viewport
+            toggleActions: "play none none reverse", // Play when entering, reverse when leaving
+        }
+    });
+});
+// ----------------------------------------------------
     </script>
 </body>
+
 </html>
